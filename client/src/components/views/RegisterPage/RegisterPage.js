@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { registerUser } from '../../../_action/user_action';
+import { registerUser } from '../../../_actions/user_action';
 
 function RegisterPage( props ) {
     const dispatch = useDispatch();
