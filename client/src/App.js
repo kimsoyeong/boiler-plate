@@ -17,8 +17,6 @@ function App() {
         <div>
          
 
-          <hr />
-
           {/*
             A <Routes> looks through all its children <Route>
             elements and renders the first one whose path
