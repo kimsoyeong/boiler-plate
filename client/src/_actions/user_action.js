@@ -4,11 +4,12 @@ import {
     REGISTER_USER,
     AUTH_USER
 } from './types';
+import { USER_SERVER } from '../components/Config.js';
 
 export function loginUser(dataTosubmit) {
 
     // 서버에서 받은 data를 request에 저장
-    const request = Axios.post('/api/users/login', dataTosubmit)
+    const request = Axios.post(`${USER_SERVER}/login`, dataTosubmit)
     .then(response => response.data);
 
     return {
@@ -19,7 +20,7 @@ export function loginUser(dataTosubmit) {
 
 export function registerUser(dataTosubmit) {
 
-    const request = Axios.post('/api/users/register', dataTosubmit)
+    const request = Axios.post(`${USER_SERVER}/register`, dataTosubmit)
     .then(response => response.data);
 
     return {
@@ -30,7 +31,7 @@ export function registerUser(dataTosubmit) {
 
 export function auth() {
 
-    const request = Axios.get('/api/users/auth')
+    const request = Axios.get(`${USER_SERVER}/auth`)
     .then(response => response.data);
 
     return {
