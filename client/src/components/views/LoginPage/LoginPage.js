@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../../../_actions/user_action';
-import { Button, Typography } from 'antd';
+import { Input, Button, Typography } from 'antd';
+import './loginpage.css';
 
 const { Title } = Typography;
 
@@ -52,17 +53,29 @@ function LoinPage( props ) {
                 <form style={{ display: 'flex', flexDirection: 'column' }}
                     onSubmit={onSubmitHandler}
                 >
-                    <label>Email</label>
-                    <input type="email" value={ Email } onChange={onEmailHandler} />
-                    <label>Password</label>
-                    <input type="password" value={ Password } onChange={onPasswordHandler} />
+                    <label className="label">Email</label>
+                    <Input
+                        id="email" 
+                        placeholder="Enter your Email" 
+                        type="email" 
+                        value={ Email }
+                        onChange={onEmailHandler} 
+                    />
+                    <label className="label">Password</label>
+                    <Input 
+                        id="password"
+                        placeholder="Enter your password"
+                        type="password" 
+                        value={ Password }
+                        onChange={onPasswordHandler} 
+                    />
 
                     <br />
                     <Button type="primary" htmlType="submit" className="login-form-button" style={{ minWidth: '100%' }}>
                         Log in
                     </Button>
 
-                    <a href="/register">register now!</a>
+                    <a className="gotoRegister" href="/register">register now!</a>
                 </form>
             </div>
         </div>

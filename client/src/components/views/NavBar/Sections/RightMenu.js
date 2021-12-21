@@ -1,23 +1,25 @@
 import { Menu } from 'antd';
-import axios from 'axios';
 import { useSelector } from "react-redux";
-import { USER_SERVER } from '../../../Config';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { logoutUser } from '../../../../_actions/user_action';
 
 
 function RightMenu(props) {
+  const dispatch = useDispatch();
   let navigate = useNavigate();
 
   const user = useSelector(state => state.user);
 
   const logoutHandler = () => {
-    axios.get(`${USER_SERVER}/logout`).then(response => {
-      if (response.status === 200) {
-        navigate("/login");
-      } else {
-        alert('Log Out Failed');
-      }
-    });
+    dispatch(logoutUser())
+        .then(response => {
+            if(response.payload.success) {
+                navigate('/login');
+            } else {
+                alert('Log Out Failed...');
+            }
+        });
   };
 
   if (user.userData && !user.userData.isAuth) {

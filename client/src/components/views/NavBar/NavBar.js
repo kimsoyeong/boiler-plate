@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Drawer, Button } from 'antd';
 import { AlignRightOutlined } from '@ant-design/icons';
 import LeftMenu from './Sections/LeftMenu';
@@ -25,7 +25,7 @@ function NavBar() {
             <div className="menu_left">
                 <LeftMenu mode="horizontal" />
             </div>
-            <div className="menu_rigth">
+            <div className="menu_right">
                 <RightMenu mode="horizontal" />
             </div>
             <Button
@@ -33,7 +33,6 @@ function NavBar() {
                 type="primary"
                 onClick={showDrawer}
             >
-                {/* <Icon type="align-right" /> */}
                 <AlignRightOutlined />
             </Button>
             <Drawer

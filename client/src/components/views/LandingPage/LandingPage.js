@@ -1,28 +1,7 @@
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import { FaCode } from "react-icons/fa";
-import { USER_SERVER } from '../../Config.js';
 
 
 function LandingPage( props ) {
-    let navigate = useNavigate();
-
-    useEffect(() => {
-        // axios.get('/api/hello')
-        // .then(response => console.log(response.data));
-    }, []);
-
-    // const onClickHandler = () => {
-    //     axios.get( `${USER_SERVER}/logout`)
-    //     .then(response => {
-    //         if(response.data.success) {
-    //             navigate("/login");
-    //         } else {
-    //             alert("Logout failed");
-    //         }
-    //     })
-    // }
 
     return (
         <>

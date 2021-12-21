@@ -16,7 +16,7 @@
 .menu__logo a {
   display: inline-block;
   font-size: 20px;
-  padding: 19px 20px;
+  padding: 7px 20px 10px 20px;
 }
 
 .menu__container .ant-menu-item {
@@ -40,7 +40,7 @@
   float: left;
 }
 
-.menu__container .menu_rigth {
+.menu__container .menu_right {
   float: right;
 }
 
@@ -68,7 +68,7 @@
   }
 
   .menu_left,
-  .menu_rigth {
+  .menu_right {
     display: none;
   }
 
